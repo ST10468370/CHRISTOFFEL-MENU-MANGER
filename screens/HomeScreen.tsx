@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button,TextInput, Alert, ScrollView, SafeAreaView, } from "react-native";
 import { Course, MenuItem } from "../types/menu";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
 
@@ -89,13 +90,20 @@ const groupedByCourse = COURSE_TITLES.map((c) => ({
 const totalItems = menuItems.length;
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar/>
+
+            <ScrollView
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.scrollcontainer}>
+
+            //Header*/
             <View style={styles.header}>
                 <Text style={styles.title}>Christoffel's Menu</Text>
                 <Text style={styles.totalCount}>Total Items: {totalItems}</Text>
             </View>
 
-            <ScrollView style={styles.formSection}>
+            <View style={styles.formSection}>
                 <Text style={styles.formTitle}>Add New Menu Item</Text>
 
                 <Text style={styles.label}>Dish Name:</Text>
@@ -139,7 +147,7 @@ const totalItems = menuItems.length;
                 <View style={styles.formButtons}>
                     <Button title="Add Item" onPress={handleSubmit} />
                 </View>
-            </ScrollView>
+            </View>
 
             {/*Menu List*/}
 
@@ -177,6 +185,8 @@ const totalItems = menuItems.length;
                     </View>
                 ))}
             </View>
+            </ScrollView>
+        
             </SafeAreaView>
             
         );
@@ -243,7 +253,6 @@ const totalItems = menuItems.length;
             marginTop: 8,
         },
         menuContainer: {
-            flex: 1,
             padding: 16,
         },
         courseSection: {
@@ -299,6 +308,9 @@ const totalItems = menuItems.length;
             fontSize: 14,
             color: "#ff4d4d",
             textDecorationLine: "underline",
+        },
+        scrollcontainer: {
+            paddingBottom: 16,
         },
     });
 

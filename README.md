@@ -4,7 +4,7 @@ Commit #2; I implemented the scrollview function, as the more dishes added to th
 
 Since the 10th of May my electricity has been off. The past storms during this week cause massive damage to infrastucture. I was therfore not able to do further work on my project. The app functions and does what is needed, but in the future I will be adding in color and design, including the second screen function needed for PART 3.
 
-Commit #4; I coded up the functionality of all 3 screen, will debug and add color next. I refences the Expo guide for navigation and layout code, as well as the Module Manual and ma'ams Poe Walkthrough.
+Commit #4; I coded up the functionality of all 3 screen. I rerenced the Expo guide for navigation and layout code, Typscript for code and error handling, as well as the Module Manual and ma'ams Poe Walkthrough.
 
 CHANGES FROM PART 2; 
 - layout change, as information and content changed.
